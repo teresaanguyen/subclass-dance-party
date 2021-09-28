@@ -31,7 +31,9 @@ body, a:link, a:visited, a:active{
   position:absolute;
 }
 
-.bouncyDancer{
+.bouncyDancer:hover{
+  /* background-color: black; */
   border-radius: 10px;
-  position: absolute;
+  /* position: absolute;
+  transform: scale(2); */
 }

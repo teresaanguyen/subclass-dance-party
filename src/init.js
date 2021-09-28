@@ -1,7 +1,8 @@
-$(document).ready(function() {
+$(document).ready(function () {
   window.dancers = [];
 
-  $('.addDancerButton').on('click', function(event) {
+
+  $('.addDancerButton').on('click', function (event) {
     /* This function sets up the click handlers for the create-dancer
      * buttons on dancefloor.html. You should only need to make one small change to it.
      * As long as the "data-dancer-maker-function-name" attribute of a
@@ -22,12 +23,31 @@ $(document).ready(function() {
 
     // make a dancer with a random position
 
-    var dancer = dancerMakerFunction(
-      $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
+    var dancer = new dancerMakerFunction(
+      $('body').height() * Math.random(),
+      $('body').width() * Math.random(),
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+    window.dancers.push(dancer);
+    console.log(window.dancers);
   });
+
+
 });
 
+var dancersArray = window.dancers;
+
+var $lineupButton = $('.lineUp');
+$lineupButton.on('click', function () {
+  for (var i = 0; i < dancersArray.length; i++) {
+    dancersArray[i].setPosition(i * 200 + 100, 300);
+  }
+});
+
+var findNeighbor = function() {
+  for (var i = 0; i < dancersArray.length; i ++) {
+
+  }
+};
+var distanceBetweenDancers =

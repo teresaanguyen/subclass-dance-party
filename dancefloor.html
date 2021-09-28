@@ -9,16 +9,24 @@
   <script src="src/blinkyDancer.js"></script>
   <script src="src/bouncyDancer.js"></script>
   <script src="src/movingDancer.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Roboto&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <div class="topbar">
     <span class="title">Blob Dance Party</span>
-    <a href="#" class="btn addDancerButton" data-dancer-maker-function-name="MakeBlinkyDancer">add a blinky dancer</a>
-    <a href="#" class=" btn addDancerButton" data-dancer-maker-function-name="MakeBouncyDancer">add a bouncy dancer</a>
-    <a href="#" class=" btn addDancerButton" data-dancer-maker-function-name="MakeMovingDancer">add a moving dancer</a>
-    <button type="button" class=" btn lineUp ">Line Up</button>
-    <button type="button" class="btn findNeighbor">Find Neighbor</button>
+    <div class="buttons">
+      <button class="btn addDancerButton" data-dancer-maker-function-name="MakeBlinkyDancer">Add a Blinky
+        Blob</button>
+      <button type="button" class="instructions">Click A Surrounding Button To See The Blobs Dance!</button>
+      <button class=" btn addDancerButton" data-dancer-maker-function-name="MakeBouncyDancer">Add a Bouncy
+        Blob</button>
+      <button type="button" class=" btn lineUp ">Line Up</button>
+      <button class=" btn addDancerButton" data-dancer-maker-function-name="MakeMovingDancer">Add a Crazy
+        Blob</button>
+      <button type="button" class="btn findNeighbor">Find A Friend</button>
+
+    </div>
   </div>
   <style>
     body {

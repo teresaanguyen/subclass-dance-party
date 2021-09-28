@@ -1,6 +1,7 @@
 $(document).ready(function () {
   window.dancers = [];
-
+  var $dancerOne;
+  var $dancerTwo;
 
   $('.addDancerButton').on('click', function (event) {
     /* This function sets up the click handlers for the create-dancer
@@ -36,18 +37,27 @@ $(document).ready(function () {
 
 });
 
-var dancersArray = window.dancers;
 
 var $lineupButton = $('.lineUp');
 $lineupButton.on('click', function () {
-  for (var i = 0; i < dancersArray.length; i++) {
-    dancersArray[i].setPosition(i * 200 + 100, 300);
+  for (var i = 0; i < window.dancers.length; i++) {
+    window.dancers[i].setPosition(i * 200 + 100, 200);
   }
 });
 
-var findNeighbor = function() {
-  for (var i = 0; i < dancersArray.length; i ++) {
-
+var $findNeighbor = $('.findNeighbor');
+$findNeighbor.on('click', function () {
+  for (var i = 0; i < window.dancers.length - 1; i += 2) {
+    var dancerHeight = $('body').height() * Math.random();
+    var dancerWidth = $('body').width() * Math.random();
+    $dancerOne = window.dancers[i];
+    $dancerTwo = window.dancers[i + 1];
+    $dancerOne.setPosition(dancerHeight, dancerWidth);
+    $dancerTwo.setPosition(dancerHeight, dancerWidth + 150);
+    //console.log('this is dancer one:', $dancerOne.$node);
+    $dancerOne.$node[0].animate({ transform: 'scale(2)' }, { duration: 2000, easing: 'linear' });
+    $dancerTwo.$node[0].animate({ transform: 'scale(2)' }, { duration: 2000 });
+    $dancerOne.$node[0].animate({ transform: 'scale(1)' }, { duration: 2000, easing: 'linear' });
+    $dancerTwo.$node[0].animate({ transform: 'scale(1)' }, { duration: 2000 });
   }
-};
-var distanceBetweenDancers =
+});

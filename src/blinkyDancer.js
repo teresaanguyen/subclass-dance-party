@@ -1,7 +1,7 @@
 var MakeBlinkyDancer = function (top, left, timeBetweenSteps) {
   MakeDancer.call(this, top, left, timeBetweenSteps);
   this.oldStep = MakeDancer.prototype.step;
-  this.$node.append('<img class="blinkyDancer" height="120px" width="110px" src="src/images/happy.png" ></img>');
+  this.$node.append('<img class="blinkyDancer" id="blinky" height="120px" width="110px" src="src/images/happy.png" onclick="src/images/sweatyguy.png"></img>');
   this.$node.addClass('happy');
 };
 
@@ -15,6 +15,7 @@ MakeBlinkyDancer.prototype.step = function () {
   // See http://api.jquery.com/category/effects/ for this and
   // other effects you can use on a jQuery-wrapped html tag.
   this.$node.toggle();
+  this.$node.click(function () {
+    this.$node.attr('src', 'src/images/sweatyguy.png');
+  });
 };
-
-

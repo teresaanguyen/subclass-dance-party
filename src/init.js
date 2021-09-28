@@ -25,7 +25,7 @@ $(document).ready(function () {
     // make a dancer with a random position
 
     var dancer = new dancerMakerFunction(
-      $('body').height() * Math.random(),
+      $('body').height() * Math.random() + 400,
       $('body').width() * Math.random(),
       Math.random() * 1000
     );
@@ -41,14 +41,14 @@ $(document).ready(function () {
 var $lineupButton = $('.lineUp');
 $lineupButton.on('click', function () {
   for (var i = 0; i < window.dancers.length; i++) {
-    window.dancers[i].setPosition(i * 200 + 100, 200);
+    window.dancers[i].setPosition(i * 200 + 400, 200);
   }
 });
 
 var $findNeighbor = $('.findNeighbor');
 $findNeighbor.on('click', function () {
   for (var i = 0; i < window.dancers.length - 1; i += 2) {
-    var dancerHeight = $('body').height() * Math.random();
+    var dancerHeight = $('body').height() * Math.random() + 315;
     var dancerWidth = $('body').width() * Math.random();
     $dancerOne = window.dancers[i];
     $dancerTwo = window.dancers[i + 1];
